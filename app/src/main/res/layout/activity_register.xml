@@ -6,4 +6,215 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/LeftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/RightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="400dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/TopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/BottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="700dp" />
+
+    <TextView
+        android:id="@+id/RegisterPageTitle"
+        style="@style/TitleTextViewStyle"
+        android:layout_width="wrap_content"
+        android:text="@string/register_page_title"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="600dp"
+        app:layout_constraintBottom_toTopOf="@id/BottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/LeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/RightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/TopGuideline" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <GridLayout
+            style="@style/InputEdiTextStyle"
+            android:layout_marginLeft="40dp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:columnCount="2"
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="400dp"
+            android:scrollbarSize="100dp"
+            app:layout_constraintBottom_toTopOf="@id/BottomGuideline"
+            app:layout_constraintLeft_toRightOf="@id/LeftGuideline"
+            app:layout_constraintRight_toLeftOf="@id/RightGuideline"
+            app:layout_constraintTop_toBottomOf="@id/TopGuideline">
+
+            <TextView
+                android:id="@+id/namelbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:text="  Name " />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:gravity="left"/>
+
+                <TextView android:id="@+id/agelbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dip"
+                    android:text="  Age" />
+
+                <EditText android:id="@+id/age"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    />
+
+                <TextView android:id="@+id/genderlbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dip"
+                    android:text="  Gender" />
+                <EditText android:id="@+id/gender"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                   />
+
+                <TextView android:id="@+id/phone1lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dip"
+                    android:text="  PhoneNo" />
+                <EditText android:id="@+id/phone1"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                     />
+
+                <TextView android:id="@+id/phone2lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dip"
+                    android:text="  PhoneNo2" />
+                <EditText android:id="@+id/phone2"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                     />
+
+                <TextView android:id="@+id/emaillbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dip"
+                    android:text="  Email" />
+                <EditText android:id="@+id/email"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                     />
+
+                <TextView android:id="@+id/addresslbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dip"
+                    android:text="  Address" />
+                <EditText android:id="@+id/address"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"/>
+
+                <TextView android:id="@+id/usernamelbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dip"
+                    android:text="  Username" />
+                <EditText android:id="@+id/username"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    />
+
+                <TextView android:id="@+id/passwordlbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="  Password" />
+                <EditText android:id="@+id/password"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                     />
+                <TextView android:id="@+id/validIdlbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="  AdharId/PAN" />
+                <EditText android:id="@+id/validId"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    />
+
+                <Button
+                    android:id="@+id/submitBtn"
+                    style="@style/ButtonStyle"
+                    android:height="20dp"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnSpan="2"
+                    android:text="Submit"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_marginBottom="30dp"
+                    app:layout_constraintBottom_toTopOf="@id/BottomGuideline"
+                    app:layout_constraintLeft_toRightOf="@id/LeftGuideline"
+                    app:layout_constraintRight_toLeftOf="@id/RightGuideline"
+                    app:layout_constraintTop_toBottomOf="@id/TopGuideline" />
+
+        </GridLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/responseStatusText"
+        style="@style/NotificationTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="130dp"
+        app:layout_constraintBottom_toTopOf="@id/BottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/LeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/RightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/TopGuideline" />
+    <ImageView
+        android:id="@+id/BackGroundImage"
+        style="@style/BackgroundImageStyle"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/BottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/LeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/RightGuideline"
+        app:layout_constraintTop_toTopOf="@id/TopGuideline" />
 </androidx.constraintlayout.widget.ConstraintLayout>

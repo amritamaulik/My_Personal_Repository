@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">AarogyaAtHome</string>
     <string name="login_page_title">Aarogya@Home</string>
+    <string name="register_page_title">Register</string>
+    <string name="home_page_title">Aarogya@Home</string>
+    <string name="managedservices_page_title">Aarogya@Home</string>
+    <string name="eligibilty_page_title">Aarogya@Home</string>
+
     <string name="login_page_subtitle">!! Self Care is the best Care !!</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
