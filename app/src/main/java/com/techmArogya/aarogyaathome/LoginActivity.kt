@@ -18,5 +18,11 @@ class LoginActivity : AppCompatActivity() {
             startActivity(reqisterIntent)
         }
 
+        val loginHome = findViewById(R.id.loginBtn) as Button
+        loginHome.setOnClickListener {
+            val loginHomeIntent = Intent(this, HomeActivity::class.java)
+            startActivity(loginHomeIntent)
+        }
+
     }
 }
