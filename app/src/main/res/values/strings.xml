@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AarogyaAtHome</string>
+    <string name="login_page_title">Aarogya@Home</string>
+    <string name="login_page_subtitle">!! Self Care is the best Care !!</string>
 </resources>
