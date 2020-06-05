@@ -23,6 +23,6 @@ class LoginActivity : AppCompatActivity() {
             val loginHomeIntent = Intent(this, HomeActivity::class.java)
             startActivity(loginHomeIntent)
         }
-
+            /// add hwere mcode for shared preferences
     }
 }

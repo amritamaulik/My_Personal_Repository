@@ -35,7 +35,7 @@ class HomeActivity : AppCompatActivity() {
                     return@setOnNavigationItemSelectedListener true
                 }
                 menuItem.itemId==R.id.help ->{
-                    loadFragment(HelpFragment())
+                    loadFragment(EnquiryStatusFragment())
                     return@setOnNavigationItemSelectedListener true
                 }
                 else ->{
