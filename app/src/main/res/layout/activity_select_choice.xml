@@ -45,4 +45,24 @@
         app:layout_constraintTop_toBottomOf="@id/TopGuideline" />
 
 
+    <Button
+        android:id="@+id/nextBtn"
+        style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginRight="110dp"
+        android:layout_marginBottom="120dp"
+        android:alpha="1"
+        android:text="Next"
+        android:theme="@style/Base.Widget.AppCompat.ActionButton"
+        app:layout_constraintBottom_toTopOf="@id/BottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/LeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/RightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/TopGuideline" />
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
