@@ -169,7 +169,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Buy/Rent medical \nequipements"
+                                    android:text="Buy/Rent Instruments"
                                     android:gravity="center"
                                     android:textSize="14sp"
                                     android:layout_below="@id/covidFighterWeapons"
@@ -214,7 +214,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Care at Home"
+                                    android:text="Book a HomeVisit"
                                     android:textSize="14sp"
                                     android:layout_below="@id/homeCare"
                                     android:layout_centerHorizontal="true"
@@ -268,7 +268,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Call Ambulance"
+                                    android:text="Book Ambulance"
                                     android:textSize="14sp"
                                     android:layout_below="@id/CallAmbulance"
                                     android:layout_centerHorizontal="true"
