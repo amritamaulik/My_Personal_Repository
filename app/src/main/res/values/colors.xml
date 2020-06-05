@@ -8,4 +8,6 @@
     <color name="textColor">#000000</color>
     <color name="buttonBackgroundColor">@android:color/holo_orange_light</color>
     <color name="linkTextColor">#0000ff</color>
+    <color name="buttonBackground">#ffccdd</color>
+
 </resources>
