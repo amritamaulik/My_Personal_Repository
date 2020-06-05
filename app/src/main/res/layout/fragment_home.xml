@@ -181,7 +181,7 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/covidFighterWeaponsBtn"
+                                    android:id="@+id/buyHireMedicalInstrumentsBtn"
                                     android:background="@color/buttonBackground"
                                     android:alpha="0.3"
                                     >
@@ -225,7 +225,7 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/homeCareBtn"
+                                    android:id="@+id/homeVisitBtn"
                                     android:background="@color/buttonBackground"
                                     android:alpha="0.3"
                                     >
@@ -279,7 +279,7 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/CallAmbulanceBtn"
+                                    android:id="@+id/bookAmbulanceBtn"
                                     android:background="@color/buttonBackground"
                                     android:alpha="0.3"
                                     >

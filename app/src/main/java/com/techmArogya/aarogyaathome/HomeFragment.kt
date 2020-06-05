@@ -46,17 +46,35 @@ class HomeFragment : Fragment() {
 
 
         // Doc on Call
-        managedServiceBtn.setOnClickListener{
-            val intent = Intent(activity,SelectChoiceActivity::class.java)
+        docOnCallBtn.setOnClickListener{
+            val intent = Intent(activity,DocOnCallActivity::class.java)
             startActivity(intent)
             Log.e(tag,"ChatBot Launched")
         }
         // Buy/hire Medical Instruments
-        // Book a HomeVisit
-        // Book Ambulance
-        // Go to hospital
-        managedServiceBtn.setOnClickListener{
+        buyHireMedicalInstrumentsBtn.setOnClickListener{
             val intent = Intent(activity,SelectChoiceActivity::class.java)
+            // add questions only related to instruments/equipments
+            startActivity(intent)
+            Log.e(tag,"ChatBot Launched")
+        }
+        // Book a HomeVisit
+        homeVisitBtn.setOnClickListener{
+            val intent = Intent(activity,SelectChoiceActivity::class.java)
+            // add questions only related to Doctor/nurse home services only
+            startActivity(intent)
+            Log.e(tag,"ChatBot Launched")
+        }
+        // Book Ambulance
+        bookAmbulanceBtn.setOnClickListener{
+            val intent = Intent(activity,RecommendActivity::class.java)
+            // just launch recommendations with ambulances in the table
+            startActivity(intent)
+            Log.e(tag,"ChatBot Launched")
+        }
+        // Go to hospital
+        goToHospitalBtn.setOnClickListener{
+            val intent = Intent(activity,HospitalListActivity::class.java)
             startActivity(intent)
             Log.e(tag,"ChatBot Launched")
         }
