@@ -6,4 +6,123 @@
     android:layout_height="match_parent"
     tools:context=".HospitalListActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/LeftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/RightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="400dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/TopGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/BottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="700dp" />
+
+    <TextView
+        android:id="@+id/Hospital_ListPageTitle"
+        style="@style/TitleTextViewStyle"
+        android:layout_width="wrap_content"
+        android:text="List of Hospitals"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="600dp"
+        app:layout_constraintBottom_toTopOf="@id/BottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/LeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/RightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/TopGuideline" />
+
+    <TextView
+        android:id="@+id/Hospital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:text=" Jehangir Hospital, Pune "
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="136dp"
+        app:layout_constraintBottom_toTopOf="@id/BottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/LeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/RightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/TopGuideline"/>
+
+
+    <TextView
+        android:id="@+id/Hospital1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:text=" Aditya Birla Memorial Hospital (ABMH), Pune"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="162dp"
+        app:layout_constraintBottom_toTopOf="@id/BottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/LeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/RightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/TopGuideline"/>
+
+    <TextView
+        android:id="@+id/Hospital2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:text="  3.Tata Memorial Centre, Mumbai"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="188dp"
+        app:layout_constraintBottom_toTopOf="@id/BottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/LeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/RightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/TopGuideline"/>
+
+    <TextView
+        android:id="@+id/Hospital3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:text="  4.Lilavati Hospital and Research Centre, Mumbai"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="214dp"
+        app:layout_constraintBottom_toTopOf="@id/BottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/LeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/RightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/TopGuideline"/>
+
+    <TextView
+        android:id="@+id/Hospital4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:text="  5.Fortis Hiranandani Hospital, Navi Mumbai"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="240dp"
+        app:layout_constraintBottom_toTopOf="@id/BottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/LeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/RightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/TopGuideline"/>
+
+    <ImageView
+        android:id="@+id/BackGroundImage"
+        style="@style/BackgroundImageStyle"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/BottomGuideline"
+        app:layout_constraintLeft_toRightOf="@id/LeftGuideline"
+        app:layout_constraintRight_toLeftOf="@id/RightGuideline"
+        app:layout_constraintTop_toTopOf="@id/TopGuideline" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
