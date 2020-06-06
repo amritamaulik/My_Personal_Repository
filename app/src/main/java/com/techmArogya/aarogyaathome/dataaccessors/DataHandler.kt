@@ -110,8 +110,8 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
         val contentValues = ContentValues()
         contentValues.put(OFFER_ID, msf.offer_Id)
         contentValues.put(FEATURE_NAME, msf.feature_name)
-        contentValues.put(FEATURE_DESCRIPTION,msf.feature_description ) // EmpModelClass Phone
-        contentValues.put(SEARCH_TAG,msf.search_tag ) // EmpModelClass Phone
+        contentValues.put(FEATURE_DESCRIPTION,msf.feature_description )
+        contentValues.put(SEARCH_TAG,msf.search_tag )
         // Inserting Row
         val success = db.insert(TABLE_MS_OFFER_FEATURES, null, contentValues)
         //2nd argument is String containing nullColumnHack
@@ -156,11 +156,11 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
         val contentValues = ContentValues()
         contentValues.put(OFFER_ID, offer.offer_Id)
         contentValues.put(OFFER_NAME, offer.offer_name)
-        contentValues.put(OFFER_DESCRIPTION,offer.offer_description ) // EmpModelClass Phone
-        contentValues.put(VENDOR_USER_ID,offer.vendor_user_id ) // EmpModelClass Phone
-        contentValues.put(OFFER_TYPE,offer.offer_type ) // EmpModelClass Phone
-        contentValues.put(OFFER_PRICE,offer.offer_price ) // EmpModelClass Phone
-        contentValues.put(SEARCH_TAG,offer.search_tag ) // EmpModelClass Phone
+        contentValues.put(OFFER_DESCRIPTION,offer.offer_description )
+        contentValues.put(VENDOR_USER_ID,offer.vendor_user_id )
+        contentValues.put(OFFER_TYPE,offer.offer_type )
+        contentValues.put(OFFER_PRICE,offer.offer_price )
+        contentValues.put(SEARCH_TAG,offer.search_tag )
         // Inserting Row
         val success = db.insert(TABLE_OFFERS, null, contentValues)
         //2nd argument is String containing nullColumnHack
