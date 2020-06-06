@@ -19,6 +19,18 @@
     <string name="serviceQuestionair">Service_Questions</string>
 
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Questions to be configured for Select Service/Instruments Screen   -->
+    <string name="Q1">Do you need thermometer and oximeter?</string>
+    <string name="Q2">Do you need N95 masks?</string>
+    <string name="Q3">Do you need PPE kit for family members?</string>
+    <string name="Q4">Do you need general Covid medicines like vitamins etc.?</string>
+    <string name="Q5">Do you need online monitoring and advice?  - on-demand / 3 times a day / 24 hrs.</string>
+    <string name="Q6">Do you need oxygen cylinder and equipment setup?</string>
+    <string name="Q7">Do you need nurse visit? Once a day / twice a day / 24 hrs.</string>
+    <string name="Q8">Do you need ambulance if ICU admission needed?</string>
+    <string name="Q9">Do you need ventilator setup / ICU setup at home?</string>
+    <string name="Q10">Do you need doctor’s visit? Once a day / twice a day / 24 hrs.</string>
+
 </resources>
