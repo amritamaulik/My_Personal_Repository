@@ -116,9 +116,11 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@id/BottomGuideline"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toRightOf="@id/LeftGuideline"
         app:layout_constraintRight_toLeftOf="@id/RightGuideline"
-        app:layout_constraintTop_toTopOf="@id/TopGuideline" />
+        app:layout_constraintTop_toTopOf="@id/TopGuideline"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
