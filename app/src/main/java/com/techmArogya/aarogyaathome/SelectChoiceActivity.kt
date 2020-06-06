@@ -82,7 +82,7 @@ class SelectChoiceActivity : AppCompatActivity() {
             if (Q1.isChecked) {
                 Log.i(tag," Q1 is Checked")
                 questionNumLst!!.clear()
-                questionNumLst!!.add("Q1")
+                questionNumLst.add("Q1")
                     Log.i(tag, questionNumLst.indexOf("Q1").toString())
                 var qm : QuestionMapping? = null
                 keyWords=qm!!.getSearchKeyWords(questionNumLst)

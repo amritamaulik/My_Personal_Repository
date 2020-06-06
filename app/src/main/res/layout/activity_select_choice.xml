@@ -54,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="@string/Q1"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:textColor="@color/textColor"/>
 
         </LinearLayout>
@@ -79,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="@string/Q2"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:textColor="@color/textColor"/>
 
             </LinearLayout>
@@ -104,7 +104,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
                     android:layout_marginLeft="10dp"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:text="@string/Q3"
                     android:textColor="@color/textColor" />
 
@@ -180,7 +180,7 @@
                     android:layout_width="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="@string/Q6"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:textColor="@color/textColor"/>
 
             </LinearLayout>
@@ -223,14 +223,14 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginBottom="15dp"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center"
                     />
                 <TextView
                     android:layout_height="fill_parent"
                     android:layout_width="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="@string/Q8"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:textColor="@color/textColor"/>
 
             </LinearLayout>
@@ -255,7 +255,7 @@
                     android:layout_width="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="@string/Q9"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:textColor="@color/textColor"/>
 
             </LinearLayout>
