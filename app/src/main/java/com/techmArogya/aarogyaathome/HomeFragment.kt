@@ -40,6 +40,7 @@ class HomeFragment : Fragment() {
         // LaunchBot to know whether Managed Service or AlaCarta
         managedServiceBtn.setOnClickListener{
             val intent = Intent(activity,SelectChoiceActivity::class.java)
+            intent.putExtra("callerButton","ManagerServices")
             startActivity(intent)
             Log.e(tag,"ChatBot Launched")
         }// need to integrate the things here
@@ -49,34 +50,36 @@ class HomeFragment : Fragment() {
         docOnCallBtn.setOnClickListener{
             val intent = Intent(activity,DocOnCallActivity::class.java)
             startActivity(intent)
-            Log.e(tag,"ChatBot Launched")
+            Log.e(tag,"Doc on Call Launched")
         }
         // Buy/hire Medical Instruments
         buyHireMedicalInstrumentsBtn.setOnClickListener{
             val intent = Intent(activity,SelectChoiceActivity::class.java)
+            intent.putExtra("callerButton","Buy/HireMedicalInstruments")
             // add questions only related to instruments/equipments
             startActivity(intent)
-            Log.e(tag,"ChatBot Launched")
+            Log.e(tag,"InstrumentsFiltered Questionair Launched")
         }
         // Book a HomeVisit
         homeVisitBtn.setOnClickListener{
             val intent = Intent(activity,SelectChoiceActivity::class.java)
+            intent.putExtra("callerButton","BookHomeVisit")
             // add questions only related to Doctor/nurse home services only
             startActivity(intent)
-            Log.e(tag,"ChatBot Launched")
+            Log.e(tag,"HomeVisitFiltered Questionair Launched")
         }
         // Book Ambulance
         bookAmbulanceBtn.setOnClickListener{
             val intent = Intent(activity,RecommendActivity::class.java)
             // just launch recommendations with ambulances in the table
             startActivity(intent)
-            Log.e(tag,"ChatBot Launched")
+            Log.e(tag,"Recommended Ambuklances Launched")
         }
         // Go to hospital
         goToHospitalBtn.setOnClickListener{
             val intent = Intent(activity,HospitalListActivity::class.java)
             startActivity(intent)
-            Log.e(tag,"ChatBot Launched")
+            Log.e(tag,"HospitalList Launched")
         }
     }
 }
