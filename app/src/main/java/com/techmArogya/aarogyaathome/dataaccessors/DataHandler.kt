@@ -301,6 +301,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
         }
         return vendorDetailsList
     }
+
     //fun
     /*
     * Add join code here */
