@@ -9,5 +9,7 @@
     <color name="buttonBackgroundColor">@android:color/holo_orange_light</color>
     <color name="linkTextColor">#0000ff</color>
     <color name="buttonBackground">#ffccdd</color>
+    <color name="bg_bubble_self">#62caa6</color>
+    <color name="bg_bubble_watbot">#ecf0f1</color>
 
 </resources>

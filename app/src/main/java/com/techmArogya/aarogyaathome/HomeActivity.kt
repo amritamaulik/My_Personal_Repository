@@ -3,9 +3,11 @@ package com.techmArogya.aarogyaathome
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_FADE
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_OPEN
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.techmArogya.aarogyaathome.dataaccessors.DatabaseHandler
 import com.techmArogya.aarogyaathome.dataaccessors.MSFeatureModelClass
 import com.techmArogya.aarogyaathome.dataaccessors.OfferModelClass
@@ -13,7 +15,7 @@ import com.techmArogya.aarogyaathome.dataaccessors.VendorDetailsModelClass
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity()/*, HomeFragment.OnManagedServicesClickListener */{
-
+    private val TAG = HomeActivity::class.java.simpleName
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -24,8 +26,9 @@ class HomeActivity : AppCompatActivity()/*, HomeFragment.OnManagedServicesClickL
         // load fragment on selection
         loadSelectedFragment()
         }
+        val dbHandler: DatabaseHandler= DatabaseHandler(this)
 
-        loadDbDetails()
+        loadDbDetails(dbHandler)
     }
 
     /*override fun onManagedServicesClick(intent: Intent) {
@@ -40,7 +43,10 @@ class HomeActivity : AppCompatActivity()/*, HomeFragment.OnManagedServicesClickL
                     return@setOnNavigationItemSelectedListener true
                 }
                 menuItem.itemId==R.id.eligibilityCheck ->{
-                    loadFragment(EligibilityCheckFragment())
+                    val intent = Intent(this,MainActivity::class.java)
+                    intent.putExtra("callerButton","EligibilityMenuBtn")
+                    startActivity(intent)
+                    Log.e(TAG,"ChatBot Launched")
                     return@setOnNavigationItemSelectedListener true
                 }
                 menuItem.itemId==R.id.orderStatus ->{
@@ -67,13 +73,14 @@ class HomeActivity : AppCompatActivity()/*, HomeFragment.OnManagedServicesClickL
         }
     }
 
-    private fun loadDbDetails(){
-        val dbHandler: DatabaseHandler= DatabaseHandler(this)
+    private fun loadDbDetails(dbHandler: DatabaseHandler){
+        //val dbHandler: DatabaseHandler= DatabaseHandler(this)
         //------adding data to table_ms_offers
         dbHandler.addMSOffer(MSFeatureModelClass("WellnOffer1","basic equipment purchase","Thermometer, Pulse Oximeter, N95 Masks ( 5 ), gloves ( 5 )","Thermometer, Oximeter, N95, Gloves"))
         dbHandler.addMSOffer(MSFeatureModelClass("WellnOffer1","on-line consultation","on-line doctor / nurse consultation,","VirtualConsultDoc"))
         dbHandler.addMSOffer(MSFeatureModelClass("WellnOffer1","Share Health parameters","upload the health parameters.","UploadHeathParams"))
-
+        var listData :List<MSFeatureModelClass> = dbHandler.viewMSOffers()
+        System.out.println(listData[0].toString())
 
         dbHandler.addMSOffer(MSFeatureModelClass("WellnOffer2","basic equipment purchase","Thermometer, Pulse Oximeter, N95 Masks ( 5 ), gloves ( 5 )","Thermometer, Oximeter, N95, Gloves"))
         dbHandler.addMSOffer(MSFeatureModelClass("WellnOffer2","on-line consultation","on-line doctor / nurse consultation,","VirtualConsultDoc"))

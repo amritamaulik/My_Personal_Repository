@@ -17,7 +17,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
              private val OFFER_ID = "offer_Id"
              private val FEATURE_NAME = "feature_name"
              private val FEATURE_DESCRIPTION = "feature_description"
-             private val SEARCH_TAG = "search_tag"
+             private val SEARCH_TAG = "search_taggers"
         //table_Offers
         private val TABLE_OFFERS = "table_Offers"
             private val VENDOR_USER_ID = "vendor_user_id "
@@ -26,6 +26,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
             private val OFFER_TYPE = "offer_type "
             private val OFFER_PRICE = "offer_price "
         //table_Vendor_Details
+
         private val TABLE_VENDORDETAILS = "table_Vendor_Details"
             private val VENDOR_NAME = "vendor_name"
             private val BUS_REG_ID = "business_registration_id"
@@ -49,7 +50,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
                         + "("
                         + OFFER_ID + " TEXT,"
                         + FEATURE_NAME + " TEXT,"
-                        + FEATURE_DESCRIPTION + " TEXT"
+                        + FEATURE_DESCRIPTION + " TEXT,"
                         + SEARCH_TAG + " TEXT"
                         + ")"
                 )
@@ -61,9 +62,9 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
                         + OFFER_ID + " TEXT,"
                         + VENDOR_USER_ID + " TEXT,"
                         + OFFER_NAME + " TEXT,"
-                        + OFFER_TYPE + " TEXT"
-                        + OFFER_DESCRIPTION + " TEXT"
-                        + OFFER_PRICE + " TEXT"
+                        + OFFER_TYPE + " TEXT,"
+                        + OFFER_DESCRIPTION + " TEXT,"
+                        + OFFER_PRICE + " TEXT,"
                         + SEARCH_TAG + " TEXT"
                         + ")"
                 )
@@ -75,19 +76,18 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
                         + "("
                         + VENDOR_USER_ID + " TEXT,"
                         + VENDOR_NAME + " TEXT,"
-                        + BUS_REG_ID + " TEXT"
-                        + PHONE_1 + " TEXT"
-                        + PHONE_2 + " TEXT"
-                        + EMAIL_ID + " TEXT"
-                        + STREET_ADDRESS + " TEXT"
-                        + LOCALITY + " TEXT"
-                        + CITY + " TEXT"
-                        + STATE + " TEXT"
-                        + COUNTRY + " TEXT"
-                        + PIN + " TEXT"
-                        + TAX_CODE + " TEXT"
-                        + BUS_REG_COPY + " TEXT"
-                        + PIN + " TEXT"
+                        + BUS_REG_ID + " TEXT,"
+                        + PHONE_1 + " TEXT,"
+                        + PHONE_2 + " TEXT,"
+                        + EMAIL_ID + " TEXT,"
+                        + STREET_ADDRESS + " TEXT,"
+                        + LOCALITY + " TEXT,"
+                        + CITY + " TEXT,"
+                        + STATE + " TEXT,"
+                        + COUNTRY + " TEXT,"
+                        + PIN + " TEXT,"
+                        + TAX_CODE + " TEXT,"
+                        + BUS_REG_COPY + " TEXT,"
                         + RATING + " TEXT"
                         + ")"
                 )
@@ -110,12 +110,13 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
         val contentValues = ContentValues()
         contentValues.put(OFFER_ID, msf.offer_Id)
         contentValues.put(FEATURE_NAME, msf.feature_name)
-        contentValues.put(FEATURE_DESCRIPTION,msf.feature_description )
-        contentValues.put(SEARCH_TAG,msf.search_tag )
+        contentValues.put(FEATURE_DESCRIPTION,msf.feature_description)
+        contentValues.put(SEARCH_TAG,msf.searchtag)
+
         // Inserting Row
         val success = db.insert(TABLE_MS_OFFER_FEATURES, null, contentValues)
         //2nd argument is String containing nullColumnHack
-        db.close() // Closing database connection
+       // db.close() // Closing database connection
         return success
     }
     //method to read data
@@ -139,8 +140,8 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
                 offerId = cursor.getString(cursor.getColumnIndex("offer_Id"))
                 featureName = cursor.getString(cursor.getColumnIndex("feature_name"))
                 featureDescription = cursor.getString(cursor.getColumnIndex("feature_description"))
-                serachTag = cursor.getString(cursor.getColumnIndex("search_tag"))
-                val msf= MSFeatureModelClass(offer_Id = offerId, feature_name = featureName, feature_description = featureDescription,search_tag = serachTag)
+                serachTag = cursor.getString(cursor.getColumnIndex("search_taggers"))
+                val msf= MSFeatureModelClass(offer_Id = offerId, feature_name = featureName, feature_description = featureDescription,searchtag=serachTag)
                 msOfferList.add(msf)
             } while (cursor.moveToNext())
         }
@@ -206,9 +207,9 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
         return offerList
     }
 
-    /*
-    * Adding insert and view functions for table_Vendor_Details
-    * */
+//    *//*
+//    * Adding insert and view functions for table_Vendor_Details
+//    * *//*
     //method to insert data
     fun addVendorDetails(vendorDetails: VendorDetailsModelClass):Long{
         val db = this.writableDatabase
@@ -301,6 +302,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
         return vendorDetailsList
     }
 
+    //fun
     /*
     * Add join code here */
 

@@ -38,12 +38,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // LaunchBot to know whether Managed Service or AlaCarta
-        managedServiceBtn.setOnClickListener{
-            val intent = Intent(activity,SelectChoiceActivity::class.java)
-            intent.putExtra("callerButton","ManagerServices")
-            startActivity(intent)
-            Log.e(tag,"ChatBot Launched")
-        }// need to integrate the things here
+
 
 
         // Doc on Call
@@ -81,6 +76,15 @@ class HomeFragment : Fragment() {
             startActivity(intent)
             Log.e(tag,"HospitalList Launched")
         }
+
+        managedServiceBtn.setOnClickListener{
+            val intent = Intent(activity,MainActivity::class.java)
+            intent.putExtra("callerButton","ManagedServices")
+            startActivity(intent)
+            Log.e(tag,"ChatBot Launched")
+        }// need to integrate the things here
     }
+
+
 }
 

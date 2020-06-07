@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
@@ -21,13 +20,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".HospitalListActivity"></activity>
+        <activity android:name=".ServiceAskChatBotActivity"></activity>
+        <activity android:name=".HospitalListActivity" />
         <activity android:name=".DocOnCallActivity" />
         <activity android:name=".OrderStatusActivity" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".OrderCreationActivity" />
         <activity android:name=".RecommendActivity" />
         <activity android:name=".SelectChoiceActivity" />
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home" />
@@ -39,5 +40,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:authorities="${applicationId}.here.this.library.provider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities"
+            >
+
+        </provider>
     </application>
+
 </manifest>
