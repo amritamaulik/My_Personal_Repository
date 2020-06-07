@@ -87,6 +87,7 @@ public class ChatAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         TextView message;
         ImageView image;
 
+
         public ViewHolder(View view) {
             super(view);
             message = (TextView) itemView.findViewById(R.id.message);
