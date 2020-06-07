@@ -1,0 +1,1030 @@
+{
+  "intents": [
+    {
+      "intent": "Residence_Type",
+      "examples": [
+        {
+          "text": "Standalone"
+        },
+        {
+          "text": "Row"
+        },
+        {
+          "text": "Row House"
+        },
+        {
+          "text": "independent house"
+        },
+        {
+          "text": "society building"
+        },
+        {
+          "text": "shared apartment"
+        },
+        {
+          "text": "Villa"
+        },
+        {
+          "text": "society"
+        },
+        {
+          "text": "Shared"
+        },
+        {
+          "text": "building"
+        },
+        {
+          "text": "complex"
+        },
+        {
+          "text": "house"
+        }
+      ],
+      "description": "Typeof residence for home quarantine"
+    },
+    {
+      "intent": "greeting",
+      "examples": [
+        {
+          "text": "hello watson"
+        },
+        {
+          "text": "ciao"
+        },
+        {
+          "text": "buenos dias"
+        },
+        {
+          "text": "bonjour"
+        },
+        {
+          "text": "aloha"
+        },
+        {
+          "text": "hey there"
+        },
+        {
+          "text": "yello"
+        },
+        {
+          "text": "Olla"
+        },
+        {
+          "text": "feeling a bit low"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "hiya"
+        },
+        {
+          "text": "good evening"
+        },
+        {
+          "text": "namaste"
+        },
+        {
+          "text": "howdy"
+        },
+        {
+          "text": "hi there"
+        },
+        {
+          "text": "hola"
+        },
+        {
+          "text": "hey"
+        },
+        {
+          "text": "hi"
+        },
+        {
+          "text": "Good afternoon"
+        },
+        {
+          "text": "heya"
+        },
+        {
+          "text": "yo"
+        },
+        {
+          "text": "hello"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "entity": "reply",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "no",
+          "synonyms": [
+            "not now",
+            "not at this time",
+            "nope",
+            "i think not",
+            "dont think so",
+            "don't think so",
+            "definitely not",
+            "nopes"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "yes",
+          "synonyms": [
+            "yep",
+            "you betcha",
+            "you bet",
+            "yes",
+            "yeah",
+            "why not",
+            "sure",
+            "please",
+            "ok",
+            "let's do it",
+            "go for it",
+            "definitely",
+            "Yup",
+            "Yupp"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "sys-person",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-location",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "https://us-south.functions.cloud.ibm.com/api/v1/web/my_org_dev/default/Hello%20World.json",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "frame",
+      "title": "Location Info",
+      "parent": "node_3_1585093908809",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "type": "api",
+            "location": "$location"
+          },
+          "result_variable": "location_stats"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@reply:yes",
+      "dialog_node": "node_4_1585096079466",
+      "previous_sibling": "slot_8_1585096407905"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "This is all the confirmed cases I have found"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "$summary.result"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "Would you like the stats of a specific location?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1585093908809",
+      "conditions": "$summary",
+      "dialog_node": "response_1_1585095663277",
+      "previous_sibling": "node_4_1585096079466"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "I could not find any thing "
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_3_1585093908809",
+      "conditions": "anything_else",
+      "dialog_node": "response_7_1585095664425",
+      "previous_sibling": "response_1_1585095663277"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1585093908809",
+      "variable": "$location",
+      "dialog_node": "slot_8_1585096407905"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Would you like data for specific location?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_8_1585096407905",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1585096407991",
+      "previous_sibling": "handler_3_1585096407991"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1585096407905",
+      "context": {
+        "location": "@sys-location"
+      },
+      "conditions": "@sys-location",
+      "event_name": "input",
+      "dialog_node": "handler_3_1585096407991"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Is there any person in your house with underlying ailments like high BP, diabetes, Kidney problem, asthma, Thalassemia, Cancer or any other condition ?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1591353462738",
+      "conditions": "@reply:no",
+      "dialog_node": "node_2_1591356105068",
+      "previous_sibling": "node_5_1591353612066"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Is there any person in your house with underlying ailments like high BP, diabetes, Kidney problem, asthma, Thalassemia, Cancer or any other condition ?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1591353462738",
+      "conditions": "@reply:yes",
+      "dialog_node": "node_5_1591353612066"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You may not be able to safely self quarantine yourself, as you have a high risk to infect other vulnerable members in the house. We would recommend that you move to a  Covid facility to self-quarantine yourself. However, if you still choose to remain at home, you have to very strictly follow self- quarrantine rules so that other vulnerable members can remain safe. Have a good day!!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1591355731759",
+      "conditions": "@reply:yes",
+      "dialog_node": "node_2_1591362136790",
+      "previous_sibling": "node_2_1591355946250"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You may not be able to safely self-quarantine yourself, as you have a high risk to infect other vulnerable members in the house. We would strongly recommend that you move to a Covid facility to self quarrantine yourself. Have a good day!!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1591355731759",
+      "conditions": "@reply:no",
+      "dialog_node": "node_2_1591355946250"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You may not be able to self quarantine effectively. We would recommend that you move to a facility where self-quarantine is possible or make arrangements in your house so that you can get a room and a dedicated bathroom only for yourself. Have a good day!!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1591350958041",
+      "conditions": "@reply:no",
+      "dialog_node": "node_8_1591456033606",
+      "previous_sibling": "node_7_1591351229248"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Will you be able to manage food in case you are not well enough to cook ?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1591350958041",
+      "conditions": "@reply:yes",
+      "dialog_node": "node_7_1591351229248"
+    },
+    {
+      "type": "standard",
+      "title": "node_11790",
+      "output": {},
+      "parent": "node_11788",
+      "context": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_11749"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "node_11790",
+      "previous_sibling": "node_11789"
+    },
+    {
+      "type": "standard",
+      "title": "node_11789",
+      "output": {},
+      "parent": "node_11788",
+      "context": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_11748"
+      },
+      "conditions": "input.text == '' && !input.button",
+      "dialog_node": "node_11789"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You may not be able to safely self-quarantine yourself, as you have a high risk to infect other vulnerable members in the house. We would strongly recommend that you move to a Covid facility to self quarantine yourself. Have a good day!!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1591356673050",
+      "conditions": "@reply:no",
+      "dialog_node": "node_9_1591356818802",
+      "previous_sibling": "node_5_1591356728301"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You may not be able to safely self quarantine yourself, as you have a high risk to infect other vulnerable members in the house. We would recommend that you move to a  Covid facility to self-quarantine yourself. However, if you still choose to remain at home, you have to very strictly follow self- quarrantine rules so that other vulnerable members can remain safe. Have a good day!!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1591356673050",
+      "conditions": "@reply:yes",
+      "dialog_node": "node_5_1591356728301"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You can home quarantine provided you make an arrangement to get food from outside in case needed. Have a good day!!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1591351229248",
+      "conditions": "@reply:no",
+      "dialog_node": "node_7_1591456237411",
+      "previous_sibling": "node_2_1591353294269"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You can home quarantine safely. Have a good day!!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1591351229248",
+      "conditions": "@reply:yes",
+      "dialog_node": "node_2_1591353294269"
+    },
+    {
+      "type": "standard",
+      "parent": "node_2_1591348456077",
+      "dialog_node": "node_7_1591348720612",
+      "previous_sibling": "node_5_1591348622208"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "How many people live in the same house with you ? If you live alone please mention 0."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1591348456077",
+      "conditions": "#Residence_Type",
+      "dialog_node": "node_5_1591348622208"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_4_1585096079466",
+      "variable": "$location",
+      "dialog_node": "slot_9_1585096776672",
+      "previous_sibling": "response_3_1585096899249"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "I could not find any information on that."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1585096079466",
+      "conditions": "anything_else",
+      "dialog_node": "response_3_1585096899249",
+      "previous_sibling": "response_9_1585096897994"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Here are the stats for <?$location?> "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "$location_stats.result"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1585096079466",
+      "conditions": "$location_stats",
+      "dialog_node": "response_9_1585096897994"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Is there any person > 60 or <10 years of age in your house ? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1591348622208",
+      "conditions": "@sys-number > 0",
+      "dialog_node": "node_8_1591353462738",
+      "previous_sibling": "node_4_1591350958041"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Do you have a bathroom only for your use ? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1591348622208",
+      "conditions": "@sys-number:0",
+      "dialog_node": "node_4_1591350958041"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Do you have a room and an attached bathroom only for yourself which noone would use, and you will be able to self-quarrantine ?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1591356105068",
+      "conditions": "@reply:yes",
+      "dialog_node": "node_2_1591356673050",
+      "previous_sibling": "node_9_1591356265352"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Do you have a room and an attached bathroom only for yourself which no one would use, and you will be able to self-quarantine ? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1591356105068",
+      "conditions": "@reply:no",
+      "dialog_node": "node_9_1591356265352"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You may not be able to self quarantine effectively. We would recommend that you move to a facility where self-quarantine is possible or make arrangements in your house so that you can get a room and a dedicated bathroom only for yourself. Have a good day!!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1591356265352",
+      "conditions": "@reply:no",
+      "dialog_node": "node_1_1591356412882",
+      "previous_sibling": "node_7_1591356359092"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You can home quarantine safely. Have a good day!!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1591356265352",
+      "conditions": "@reply:yes",
+      "dialog_node": "node_7_1591356359092"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "I don't know the answer to that yet. But I am learning new things all the time."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_11749",
+      "conditions": "anything_else",
+      "dialog_node": "response_10_1585074744879",
+      "previous_sibling": "response_10_1585074743918"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "I don't know the answer to that yet.  $webhook_result_2.result"
+          ],
+          "selection_policy": "sequential"
+        },
+        "video": {},
+        "disclaimers": [
+          "SOURCE: https://www.cdc.gov/coronavirus/2019-ncov/faq.html"
+        ]
+      },
+      "parent": "node_11749",
+      "context": {},
+      "conditions": "$webhook_result_2",
+      "dialog_node": "response_10_1585074743918"
+    },
+    {
+      "type": "standard",
+      "title": "How Many Cases",
+      "parent": "node_4_1585096044203",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "type": "api"
+          },
+          "result_variable": "summary"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#How_many_cases",
+      "dialog_node": "node_3_1585093908809"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Bye. Stay safe. Have a good day!!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_11748",
+      "conditions": "@reply:no",
+      "dialog_node": "node_9_1591348851634"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "What location (Country/Country Code/US State) would you like the stats for?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_9_1585096776672",
+      "event_name": "focus",
+      "dialog_node": "handler_10_1585096776761",
+      "previous_sibling": "handler_2_1585096776761"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1585096776672",
+      "context": {
+        "location": "@sys-location"
+      },
+      "conditions": "@sys-location",
+      "event_name": "input",
+      "dialog_node": "handler_2_1585096776761"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You may not be able to self quarrantine effectively. We would recommend that you move to a facility where self-quarantine is possible or make arrangements in your house so that you can get a room and a dedicated bathroom only for yourself. Have a good day!!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1591353724824",
+      "conditions": "@reply:no",
+      "dialog_node": "node_5_1591355425091",
+      "previous_sibling": "node_4_1591353885927"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You may not be able to safely self quarantine yourself, as you have a high risk to infect other vulnerable members in the house. We would recommend that you move to a Covid facility to self-quarantine yourself. However, if you still choose to remain at home, you have to very strictly follow self- quarrantine rules so that other vulnerable members can remain safe. Have a good day!!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1591353724824",
+      "conditions": "@reply:yes",
+      "dialog_node": "node_4_1591353885927"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Do you have a room and an attached bathroom only for yourself which noone would use, and you will be able to self-quarantine?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1591353612066",
+      "conditions": "@reply:no",
+      "dialog_node": "node_2_1591355731759",
+      "previous_sibling": "node_4_1591353724824"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Do you have a room and an attached bathroom only for yourself which no one would use, and you will be able to self-quarantine? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1591353612066",
+      "conditions": "@reply:yes",
+      "dialog_node": "node_4_1591353724824"
+    },
+    {
+      "type": "standard",
+      "title": "node_11749",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "input": "<?input.text?>"
+          },
+          "result_variable": "webhook_result_2"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "anything_else",
+      "dialog_node": "node_11749",
+      "previous_sibling": "node_11750"
+    },
+    {
+      "type": "standard",
+      "title": "Greetings",
+      "output": {
+        "text": {
+          "values": [
+            "Good day Sir/Madam !!!                                                                                                                                                                                                                                                                                   You can recover at the comfort of your own home. We'd help you to decide if home quarantine is best for you or hospitalization is recommended.                                                                                                                                                                                                                   For this we may ask you few personal questions, which will be reviewed by a machine and not be stored in any persistent manner. Would you like to proceed?"
+          ],
+          "selection_policy": "sequential"
+        },
+        "video": {},
+        "disclaimers": [
+          "SOURCE: https://www.cdc.gov/coronavirus/2019-ncov/faq.html"
+        ]
+      },
+      "context": {},
+      "conditions": "#greeting && intents[0].confidence > 0.95",
+      "dialog_node": "node_11748",
+      "previous_sibling": "node_11788"
+    },
+    {
+      "type": "standard",
+      "title": "#Set confidence thresholds",
+      "output": {},
+      "context": {
+        "out_of_bounds": 0.2,
+        "low_confidence": 0.45
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_11789"
+      },
+      "conditions": "conversation_start",
+      "dialog_node": "node_11788",
+      "previous_sibling": "node_2_1591348456077"
+    },
+    {
+      "type": "standard",
+      "title": "node_11750",
+      "output": {
+        "text": {
+          "values": [
+            "Did you mean:",
+            "You seem to be asking about: ",
+            "I think you were asking about:"
+          ],
+          "selection_policy": "sequential"
+        },
+        "video": {},
+        "buttons": [
+          {
+            "id": "<? intents.?[intent != 'greeting' && intent != 'goodbyes'  && intent != 'nonsense' && intent != 'no' && intent != 'yes' && intent != 'weather'][0].intent ?>"
+          },
+          {
+            "id": "<? intents.?[intent != 'greeting' && intent != 'goodbyes'  && intent != 'nonsense' && intent != 'no' && intent != 'yes' && intent != 'weather'][1].intent ?>"
+          },
+          {
+            "id": "<? intents.?[intent != 'greeting' && intent != 'goodbyes'  && intent != 'nonsense' && intent != 'no' && intent != 'yes' && intent != 'weather'][2].intent ?>"
+          }
+        ],
+        "disclaimers": [
+          "SOURCE: https://www.cdc.gov/coronavirus/2019-ncov/faq.html"
+        ]
+      },
+      "context": {},
+      "conditions": "intents.size() > 0 && (intents[0].confidence < $low_confidence && intents[0].confidence > $out_of_bounds)",
+      "dialog_node": "node_11750",
+      "previous_sibling": "node_4_1585096044203"
+    },
+    {
+      "type": "folder",
+      "title": "api",
+      "dialog_node": "node_4_1585096044203",
+      "previous_sibling": "node_11748"
+    },
+    {
+      "type": "standard",
+      "title": "Eligibility_check",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What kind of residence do you have ?  For example , row house, independent house, society building, shared apartment etc."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "@reply:yes",
+      "dialog_node": "node_2_1591348456077"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "enabled": false,
+      "randomize": true,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above."
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": true,
+  "name": "CDC COVID FAQ",
+  "language": "en",
+  "description": ""
+}
