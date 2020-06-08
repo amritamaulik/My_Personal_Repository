@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_FADE
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_OPEN
@@ -29,6 +30,9 @@ class HomeActivity : AppCompatActivity()/*, HomeFragment.OnManagedServicesClickL
         val dbHandler: DatabaseHandler= DatabaseHandler(this)
 
         loadDbDetails(dbHandler)
+        if(intent !=null){
+            Toast.makeText(this,intent.getStringExtra("stringMessage"),Toast.LENGTH_SHORT)
+        }
     }
 
     /*override fun onManagedServicesClick(intent: Intent) {

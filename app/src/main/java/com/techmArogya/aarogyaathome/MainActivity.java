@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
    /* private SpeechToText speechService;
     private TextToSpeech textToSpeech;*/
     private String callerForm ;
+    private String toBeDisplayed="Have a good day!!!";
 
     private void createServices() {
         callerForm = getIntent().getStringExtra("callerButton");
@@ -155,6 +157,22 @@ public class MainActivity extends AppCompatActivity {
 
         createServices();
         sendMessage();
+       Button button = findViewById( R.id.goselecteBtn);
+      // button.setVisibility(1);
+       button.setOnClickListener(new View.OnClickListener(){
+           public void onClick(View v) {
+               goToHome=false;
+               if("ManagedServices".equalsIgnoreCase(getIntent().getStringExtra("callerButton"))){
+              checkHomeCallScreen();}else{
+                   goToHome=true;
+                   checkHomeCallScreen();
+
+           }
+
+           }
+
+       });
+
 
     }
 
@@ -286,6 +304,7 @@ public class MainActivity extends AppCompatActivity {
                                     outMessage.setId("2");
                                     if(r.text().contains("Have a good day!!!")){
                                         goToHome=true;
+                                        toBeDisplayed = r.text();
                                     }
                                     messageArrayList.add(outMessage);
 
@@ -353,6 +372,10 @@ public class MainActivity extends AppCompatActivity {
         if(!goToHome) {
             Intent intent = new Intent(this, SelectChoiceActivity.class);
             intent.putExtra("callerButton","MainActivity");
+            startActivity(intent);
+        }else{
+            Intent intent = new Intent(this, HomeActivity.class);
+            intent.putExtra("stringMessage","toBeDisplayed");
             startActivity(intent);
         }
     }
