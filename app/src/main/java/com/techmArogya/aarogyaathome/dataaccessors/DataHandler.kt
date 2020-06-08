@@ -302,7 +302,96 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
         return vendorDetailsList
     }
 
-    //fun
+   /* fun showMSOffers(keyword:String ):HashMap<String,String>?{
+        var hashMapMSOfferdetails:HashMap<String,String>?=null
+
+        var sqlQuery = "Select \toffers.vendor_user_id, \n" +
+                "\t\toffers.offer_Id, \n" +
+                "\t\toffers.offer_price, \n" +
+                "\t\tcount(offers.offer_Id), \n" +
+                "\t\tvendor.vendor_name, \n" +
+                "\t\tvendor.contact_ph1, \n" +
+                "\t\tvendor.contact_ph1, \n" +
+                "\t\tvendor.email_id, \n" +
+                "\t\tvendor.street_address, \n" +
+                "\t\tvendor.locality, \n" +
+                "\t\tvendor.city, \n" +
+                "\t\tvendor.state, \n" +
+                "\t\tvendor.rating\t\t\n" +
+                "from table_Vendor_Details vendor, table_Offers  offers, table_MS_Offer_Features  managedservices\t\t\n" +
+                "where managedservices.search_taggers in ("+ keyword+") \t\t\n" +
+                "and offers.offer_type =\"Managed Service\"\t\t\n" +
+                "and offers.offer_Id = managedservices.OfferId\t\t\n" +
+                "and vendor.vendor_user_id = offers.vendor_user_id \t\t\n" +
+                "group by offers.vendor_user_id,offers.offer_Id\t\t\n" +
+                "order by  count(offers.offer_Id) , vendor.rating, offers.offer_price desc"
+
+        val db = this.readableDatabase
+        var cursor: Cursor? = null
+        try{
+            cursor = db.rawQuery(sqlQuery, null)
+        }catch (e: SQLiteException) {
+            db.execSQL(sqlQuery)
+            var resultlst=ArrayList()
+        }
+        var vendor_user_id: String
+        var vendor_name: String
+        var busRegID: String
+        var busRegCopy: String
+        var ph1: String
+        var ph2: String
+        var city: String
+        var state: String
+        var country: String
+        var locality: String
+        var streetAdrees: String
+        var pincode: String
+        var taxcode: String
+        var emilid: String
+        var rating: String
+        if (cursor.moveToFirst()) {
+            do {
+                vendor_user_id = cursor.getString(cursor.getColumnIndex("vendor_user_id"))
+                vendor_name = cursor.getString(cursor.getColumnIndex("vendor_name"))
+                busRegID = cursor.getString(cursor.getColumnIndex("business_registration_id"))
+                busRegCopy = cursor.getString(cursor.getColumnIndex("business_registration_copy"))
+                ph1 = cursor.getString(cursor.getColumnIndex("contact_ph1"))
+                ph2 = cursor.getString(cursor.getColumnIndex("contact_ph2"))
+                city = cursor.getString(cursor.getColumnIndex("city"))
+                state = cursor.getString(cursor.getColumnIndex("state"))
+                locality = cursor.getString(cursor.getColumnIndex("locality"))
+                streetAdrees = cursor.getString(cursor.getColumnIndex("street_address"))
+                pincode = cursor.getString(cursor.getColumnIndex("pin_code"))
+                taxcode = cursor.getString(cursor.getColumnIndex("tax_code"))
+                emilid = cursor.getString(cursor.getColumnIndex("email_id"))
+                rating = cursor.getString(cursor.getColumnIndex("rating"))
+                country = cursor.getString(cursor.getColumnIndex("country"))
+                val vendordtls= VendorDetailsModelClass(vendor_user_id = vendor_user_id,
+                    vendor_name = vendor_name,
+                    business_registration_id = busRegID,
+                    business_registration_copy = busRegCopy,
+                    contact_ph1 = ph1,
+                    contact_ph2 = ph2,
+                    city = city,
+                    state = state,
+                    locality = locality,
+                    street_address = streetAdrees,
+                    pin_code = pincode,
+                    tax_code = taxcode,
+                    email_id = emilid,
+                    rating = rating,
+                    country = country
+                )
+                hashMapMSOfferdetails.add(vendordtls)
+            } while (cursor.moveToNext())
+        }
+
+
+
+
+
+        return hashMapMSOfferdetails*/
+    //}
     /*
     * Add join code here */
 

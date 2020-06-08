@@ -20,7 +20,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ServiceAskChatBotActivity"></activity>
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CreateOrderActivity" />
+        <activity android:name=".ServiceAskChatBotActivity" />
         <activity android:name=".HospitalListActivity" />
         <activity android:name=".DocOnCallActivity" />
         <activity android:name=".OrderStatusActivity" />
@@ -33,24 +41,14 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_home" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".LoginActivity"/>
 
         <provider
-            android:authorities="${applicationId}.here.this.library.provider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.here.this.library.provider"
             android:exported="false"
             android:grantUriPermissions="true"
-            tools:replace="android:authorities"
-            >
-
-        </provider>
+            tools:replace="android:authorities" />
     </application>
-
 
 </manifest>
