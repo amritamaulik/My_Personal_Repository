@@ -10,6 +10,8 @@ import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_select_choice.*
 import com.techmArogya.aarogyaathome.QuestionMapping
+import kotlinx.android.synthetic.main.activity_select_choice.Q1
+import kotlinx.android.synthetic.main.recommendation_tab_layout.*
 
 class SelectChoiceActivity : AppCompatActivity() {
     private val tag = SelectChoiceActivity::class.java.simpleName
@@ -105,6 +107,7 @@ class SelectChoiceActivity : AppCompatActivity() {
 
          val recommendationIntent = Intent(this, RecommendActivity::class.java)
          recommendationIntent.putExtra("Keywords",keyWords.toString())
+         recommendationIntent.putExtra("callerButton",intent.getStringExtra("callerButton"))
          startActivity(recommendationIntent)
     }
   }

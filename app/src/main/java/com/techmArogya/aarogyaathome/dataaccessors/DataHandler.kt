@@ -302,7 +302,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
         return vendorDetailsList
     }
 
-   /* fun showMSOffers(keyword:String ):HashMap<String,String>?{
+   fun showMSOffers(keyword:String ):HashMap<String,String>?{
         var hashMapMSOfferdetails:HashMap<String,String>?=null
 
         var sqlQuery = "Select \toffers.vendor_user_id, \n" +
@@ -326,7 +326,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
                 "group by offers.vendor_user_id,offers.offer_Id\t\t\n" +
                 "order by  count(offers.offer_Id) , vendor.rating, offers.offer_price desc"
 
-        val db = this.readableDatabase
+        /*val db = this.readableDatabase
         var cursor: Cursor? = null
         try{
             cursor = db.rawQuery(sqlQuery, null)
@@ -349,7 +349,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
         var taxcode: String
         var emilid: String
         var rating: String
-        if (cursor.moveToFirst()) {
+       if (cursor.moveToFirst()) {
             do {
                 vendor_user_id = cursor.getString(cursor.getColumnIndex("vendor_user_id"))
                 vendor_name = cursor.getString(cursor.getColumnIndex("vendor_name"))
@@ -385,14 +385,12 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
                 hashMapMSOfferdetails.add(vendordtls)
             } while (cursor.moveToNext())
         }
-
-
-
-
-
-        return hashMapMSOfferdetails*/
+*/
+        ///TO be added to sort out the vendrod and OrderIDs
+        return hashMapMSOfferdetails
     //}
     /*
     * Add join code here */
 
+}
 }

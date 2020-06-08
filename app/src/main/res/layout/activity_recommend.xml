@@ -42,7 +42,7 @@
                 android:layout_marginBottom="10dp">
 
                 <CheckBox
-                    android:id="@+id/Q1"
+                    android:id="@+id/offer1chk"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginTop="15dp"
@@ -51,15 +51,72 @@
                     android:layout_gravity="center"
                     />
                 <TextView
+                    android:id="@+id/offer1"
                     android:layout_height="fill_parent"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
+                    android:text="@string/Offer_1"
                     android:textColor="@color/textColor"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/Q2View"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+                <CheckBox
+                    android:id="@+id/offer2chk"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/offer2"
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/Offer_2"
+                    android:textColor="@color/textColor"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/Q3View"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+                <CheckBox
+                    android:id="@+id/offer3chk"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/offer3"
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/Offer_3"
+                    android:textColor="@color/textColor"/>
+
 
             </LinearLayout>
             <Button
-                android:id="@+id/nextBtn"
+                android:id="@+id/sendEnquiryBtn"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="220dp"

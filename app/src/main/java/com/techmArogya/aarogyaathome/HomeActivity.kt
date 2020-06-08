@@ -50,11 +50,13 @@ class HomeActivity : AppCompatActivity()/*, HomeFragment.OnManagedServicesClickL
                     return@setOnNavigationItemSelectedListener true
                 }
                 menuItem.itemId==R.id.orderStatus ->{
-                    loadFragment(OrderStatusFragment())
+                    val intent = Intent(this,OrderStatusActivity::class.java)
+                    startActivity(intent)
                     return@setOnNavigationItemSelectedListener true
                 }
                 menuItem.itemId==R.id.help ->{
-                    loadFragment(EnquiryStatusFragment())
+                    val intent = Intent(this,EnquiryStatusActivity::class.java)
+                    startActivity(intent)
                     return@setOnNavigationItemSelectedListener true
                 }
                 else ->{

@@ -66,6 +66,7 @@ class HomeFragment : Fragment() {
         // Book Ambulance
         bookAmbulanceBtn.setOnClickListener{
             val intent = Intent(activity,RecommendActivity::class.java)
+            intent.putExtra("callerButton","BookAmbulance")
             // just launch recommendations with ambulances in the table
             startActivity(intent)
             Log.e(tag,"Recommended Ambuklances Launched")

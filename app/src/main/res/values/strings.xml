@@ -552,4 +552,9 @@
         </item>
     </style>
 
+    <string name="Offer_1">OfferId :  WellnOffer1 Offername : Surgical Mask packet\nVendorId : Welln12340105201  VendorName : Wellness Home Care\nOfferDesc : 10 pieces in 1 packet OfferPrice : Rs. 150\nLocality : Khamla,Nagpur  City : Nagpur\nState : Maharashtra  Rating : 4.7/5\n</string>
+    <string name="Order">CustomerName : Savitri Shahane  OfferId :  WellnOffer1 Offername : Surgical Mask packet\nVendorId : Welln12340105201  VendorName : Wellness Home Care\nOfferDesc : 10 pieces in 1 packet OfferPrice : Rs. 150\nLocality : Khamla,Nagpur  City : Nagpur\nState : Maharashtra  Rating : 4.7/5\n</string>
+    <string name="Offer_2">OfferId :  GN95-001 Offername : N95 Mask packet\nVendorId : Goodh45670425201  VendorName : GoodHealth Pvt. Ltd\nOfferDesc : 5 pieces in 1 packet  OfferPrice : Rs. 650\nLocality : Hinjewadi,Pune City : Pune\nState : Maharashtra  Rating : 4.5/5\n</string>
+    <string name="Offer_3">OfferId :  WellnOffer1 Offername : Once a day doctor visit - 1 h/7d\nVendorId : Welln12340105201  VendorName : Wellness Home Care\nOfferDesc : Once a day doctor visit - 1 h/7d  OfferPrice : Rs. 10000\nLocality : Khamla,Nagpur  City : Nagpur\nState : Maharashtra  Rating : 4.7/5\n</string>
+
 </resources>

@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OrderStatusActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/PaymentOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Will be Delivered Soon......"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="330dp"
+        android:textSize="24sp"
+        android:textColor="@color/titleTextColor"
+        android:layout_marginBottom="600dp"
+        />
+
+
+    <ImageView
+        android:id="@+id/BackGroundImage1"
+        style="@style/BackgroundImageStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:layout_centerInParent="true"/>
+
+
+</RelativeLayout>
