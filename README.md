@@ -22,6 +22,7 @@ This would reduce load on the hospitals. Patients can recover in the comfort and
 We envision a platform aggregating various service providers and product vendors who contribute towards this goal. A mobile app linked to this platform will be available to the public. This could be a complementary app to Govt of India’s Aarogya Sethu app. While Aarogya Sethu will help in protecting one catching the virus, online doctor’s consultation and with all important information, our “Aarogya at home” App’s focus is purely on the post diagnosis journey of the patient. 
 Please note that in this Hackathon, we focused on developing the user experience in the patient’s mobile app and the healthcare ecosystem platform and supplier portals are in the roadmap. 
 
+![alt text](https://github.com/amritamaulik/My_Personal_Repository/blob/master/WIT%20Hackathon%20Images/img-1.png)
 
 
  
