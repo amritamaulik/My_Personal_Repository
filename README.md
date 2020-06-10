@@ -29,24 +29,27 @@ Please note that in this Hackathon, we focused on developing the user experience
 User journey: 
 Covid patient will use “Aarogya at home” app :
 a)	To check if his living condition is suitable for home-quarantine.  
+
 ![alt text](https://github.com/amritamaulik/My_Personal_Repository/blob/master/WIT%20Hackathon%20Images/img-2.png)
 
 
-
-
-
 b)	To look for certain facilities at home. This App will ask few questions to the patient and recommend most suitable products and services. 
+
  ![alt text](https://github.com/amritamaulik/My_Personal_Repository/blob/master/WIT%20Hackathon%20Images/img-3.png)
+ 
  ![alt text](https://github.com/amritamaulik/My_Personal_Repository/blob/master/WIT%20Hackathon%20Images/img-4.png)
  
 c)	Based on App’s recommendation or otherwise, patient can enquire about the availability and delivery timeline of the services and products.
  
 ![alt text](https://github.com/amritamaulik/My_Personal_Repository/blob/master/WIT%20Hackathon%20Images/img-5.png)
+
 ![alt text](https://github.com/amritamaulik/My_Personal_Repository/blob/master/WIT%20Hackathon%20Images/img-6.png)
  
 d)	Finally, place the order to the supplier. 
  ![alt text](https://github.com/amritamaulik/My_Personal_Repository/blob/master/WIT%20Hackathon%20Images/img-7.png)
+ 
  ![alt text](https://github.com/amritamaulik/My_Personal_Repository/blob/master/WIT%20Hackathon%20Images/img-8.png)
+ 
  ![alt text](https://github.com/amritamaulik/My_Personal_Repository/blob/master/WIT%20Hackathon%20Images/img-9.png)
  
  
@@ -61,8 +64,6 @@ Data Model for offers:
 ![alt text](https://github.com/amritamaulik/My_Personal_Repository/blob/master/WIT%20Hackathon%20Images/img-10.png)
 
 
-
-
 3.	Solution Roadmap
 In this hackathon, our aim was to build the mobile-app based customer experience. The backend platform aggregating the suppliers is in the roadmap, which we expect to complete within a month’s time. 
 
@@ -70,7 +71,6 @@ Following is the complete E2E Architecture diagram to support the roadmap functi
 
 ![alt text](https://github.com/amritamaulik/My_Personal_Repository/blob/master/WIT%20Hackathon%20Images/img-11.png)
 
- 
 
 
 We shall move the db on cloud, and wrap it by an API layer. We shall build web portal for the Suppliers. 
