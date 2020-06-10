@@ -45,6 +45,9 @@ c)	Based on App’s recommendation or otherwise, patient can enquire about the a
 
 
 ![alt text](https://github.com/amritamaulik/My_Personal_Repository/blob/master/WIT%20Hackathon%20Images/img-6.png)
+
+
+
  
 d)	Finally, place the order to the supplier. 
  ![alt text](https://github.com/amritamaulik/My_Personal_Repository/blob/master/WIT%20Hackathon%20Images/img-7.png)
